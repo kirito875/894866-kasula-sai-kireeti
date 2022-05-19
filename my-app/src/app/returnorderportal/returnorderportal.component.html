@@ -1,0 +1,36 @@
+
+<form class="text-center border border-light p-5" [formGroup]="form">
+    <p class="h4 mb-4">Process Request</p>
+   <div style="width: 50%;justify-content: center;margin: auto;">
+    <h6>username : {{username}}</h6>
+    <input type="number" name="contactnumber" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Contact Number" formControlName="contactnumber">
+    <input type="text" name="componenttype" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Component type" formControlName="componenttype">
+    <input type="text" name="componentname" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Component name" formControlName="componentname">
+    <input type="number" name="count" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="No of items" formControlName="count">
+</div>
+    
+    <button class="btn btn-success my-4" (click)="submitProcessRequest()" data-bs-toggle="modal" data-bs-target="#exampleModal">Proceed for next step</button>
+  </form>
+  
+ 
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Proceed to Payment</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>Proccessing Charge:{{obj.processingcharge}}</h6>
+          <h6>Packaging And Delivery Charge Charge:{{obj.packaginganddeliverycharge}}</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Proceed</button>
+        </div>
+      </div>
+    </div>
+  </div>
